@@ -244,4 +244,5 @@ MvcWebAppNg1Ng2/index.html
 MvcWebAppNg1Ng2/*.bundle.js
 MvcWebAppNg1Ng2/*.bundle.js.map
 MvcWebAppNg1Ng2/js/**/*.js.map
-MvcWebAppNg1Ng2/js/*.js
+MvcWebAppNg1Ng2/js/**/*.js
+!MvcWebAppNg1Ng2/js/vendor/**/*.js
