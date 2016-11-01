@@ -6,6 +6,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import './vendor/lodash';
+import './vendor/angular';
+import './vendor/angular-ui-router';
+
 import 'core-js';
 import 'zone.js';
 import 'reflect-metadata';
@@ -70,6 +74,6 @@ class Ng2AppModule { }
 /*
  * Bootstrap the App
  */
-upgradeAdapter.bootstrap(document.body, ['app']);
+upgradeAdapter.bootstrap(document.body, ['interestApp']);
 
 
