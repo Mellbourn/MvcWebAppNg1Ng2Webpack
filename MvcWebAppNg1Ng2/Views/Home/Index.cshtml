@@ -16,16 +16,38 @@
             enables a clean separation of concerns and gives you full control over markup
             for enjoyable, agile development.
         </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a>
+        </p>
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>
         <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a>
+        </p>
     </div>
     <div class="col-md-4">
         <h2>Web Hosting</h2>
         <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a>
+        </p>
     </div>
+</div>
+
+<div ng-app='interestApp'>
+    <div class="page-header">
+        <div class="container">
+            <h1>Interest <small>what you're interested in</small></h1>
+            <div class="navLinks">
+                <a ui-sref='home' id="navLinkHome">Home</a>
+                <a ui-sref='add' id="navLinkAdd">Add</a>
+            </div>
+        </div>
+    </div>
+    <div id="content">
+        <div ui-view=''></div>
+    </div>
+    <script src="~/js/vendor/lodash.js"></script>
+    <script src="~/js/vendor/angular.js"></script>
+    <script src="~/js/vendor/angular-ui-router.js"></script>
+    <script src="~/js/app.js"></script>
 </div>
