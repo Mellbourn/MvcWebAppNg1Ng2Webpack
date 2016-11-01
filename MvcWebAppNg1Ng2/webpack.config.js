@@ -1,4 +1,5 @@
-﻿var Path = require('path');
+/// <binding BeforeBuild='Run - Development' />
+var Path = require('path');
 var WebpackNotifierPlugin = require('webpack-notifier');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var CleanWebpackPlugin = require('clean-webpack-plugin');
