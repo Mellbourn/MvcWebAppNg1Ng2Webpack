@@ -5,6 +5,7 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+    debug: true,
     context: Path.join(__dirname, 'js'),
     entry: './app2.ts',
     output: {

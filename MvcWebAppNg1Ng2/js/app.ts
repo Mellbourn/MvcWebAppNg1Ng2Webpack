@@ -61,7 +61,8 @@ angular.module('interestApp', ['ui.router'])
             return input;
         }
     })
-.controller('HomeController', function (pins) {
+    .controller('HomeController', function (pins, AnalyticsService) {
+        AnalyticsService.recordEvent('HomeControllerVisited');
     this.pins = pins;
 })
 .controller('AddController', function ($state, PinsService, $timeout) {

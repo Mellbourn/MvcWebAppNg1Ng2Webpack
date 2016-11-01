@@ -23,6 +23,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { UpgradeAdapter } from '@angular/upgrade';
 declare var angular: any;
 import './app'; // "bare import" for side-effects
+import { AnalyticsService } from "./services/AnalyticsService";
+
 //import { AddPinComponent } from './components/AddPinComponent';
 //import { PinControlsComponent } from './components/PinControlsComponent';
 //import { AnalyticsService } from './services/AnalyticsService';
@@ -42,9 +44,9 @@ const upgradeAdapter: UpgradeAdapter = new UpgradeAdapter(
 //    .directive('addPin',
 //    upgradeAdapter.downgradeNg2Component(AddPinComponent));
 
-//angular.module('interestApp')
-//    .factory('AnalyticsService',
-//    upgradeAdapter.downgradeNg2Provider(AnalyticsService));
+angular.module('interestApp')
+    .factory('AnalyticsService',
+    upgradeAdapter.downgradeNg2Provider(AnalyticsService));
 
 /*
  * Expose our ng1 content to ng2
@@ -63,7 +65,7 @@ const upgradeAdapter: UpgradeAdapter = new UpgradeAdapter(
         FormsModule
     ],
     providers: [
-        //AnalyticsService,
+        AnalyticsService,
     ]
 })
 class Ng2AppModule { }
