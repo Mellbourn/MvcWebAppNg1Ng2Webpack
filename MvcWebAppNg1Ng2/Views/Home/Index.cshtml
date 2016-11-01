@@ -46,8 +46,9 @@
     <div id="content">
         <div ui-view=''></div>
     </div>
-    <script src="~/js/vendor/lodash.js"></script>
+    @*<script src="~/js/vendor/lodash.js"></script>
     <script src="~/js/vendor/angular.js"></script>
     <script src="~/js/vendor/angular-ui-router.js"></script>
-    <script src="~/js/app.js"></script>
+    <script src="~/js/app.js"></script>*@
+    @Html.Raw(File.ReadAllText(Server.MapPath("~/index.html")))
 </div>

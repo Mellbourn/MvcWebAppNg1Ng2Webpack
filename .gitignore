@@ -240,3 +240,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+MvcWebAppNg1Ng2/index.html
+MvcWebAppNg1Ng2/*.bundle.js
+MvcWebAppNg1Ng2/*.bundle.js.map
