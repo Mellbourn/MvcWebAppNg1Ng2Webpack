@@ -1,6 +1,8 @@
-﻿require('./vendor/lodash');
-require('./vendor/angular');
-require('./vendor/angular-ui-router');
+﻿import './vendor/lodash';
+import './vendor/angular';
+import './vendor/angular-ui-router';
+
+declare var angular;
 
 angular.module('interestApp', ['ui.router'])
 .service('PinsService', function ($http, $q) {
