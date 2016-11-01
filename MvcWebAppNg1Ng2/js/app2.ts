@@ -17,7 +17,7 @@ import {
 import { BrowserModule } from "@angular/platform-browser";
 import { UpgradeAdapter } from '@angular/upgrade';
 declare var angular: any;
-import 'app'; // "bare import" for side-effects
+import './app'; // "bare import" for side-effects
 //import { AddPinComponent } from './components/AddPinComponent';
 //import { PinControlsComponent } from './components/PinControlsComponent';
 //import { AnalyticsService } from './services/AnalyticsService';
