@@ -1,4 +1,8 @@
-﻿angular.module('interestApp', ['ui.router'])
+﻿require('./vendor/lodash');
+require('./vendor/angular');
+require('./vendor/angular-ui-router');
+
+angular.module('interestApp', ['ui.router'])
 .service('PinsService', function ($http, $q) {
     this._pins = null;
 

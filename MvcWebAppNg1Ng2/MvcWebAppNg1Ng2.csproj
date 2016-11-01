@@ -146,6 +146,7 @@
     <Content Include="add.html" />
     <Content Include="js\app.js" />
     <Content Include="home.html" />
+    <Content Include="js\index.html" />
     <Content Include="pin.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
