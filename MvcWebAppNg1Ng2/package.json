@@ -29,6 +29,7 @@
     "zone.js": "^0.6.21"
   },
   "devDependencies": {
+    "@types/core-js": "^0.9.34",
     "clean-webpack-plugin": "0.1.10",
     "css-loader": "^0.13.1",
     "file-loader": "^0.8.4",
