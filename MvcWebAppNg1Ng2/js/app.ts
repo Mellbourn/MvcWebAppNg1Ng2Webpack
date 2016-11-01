@@ -1,4 +1,6 @@
-﻿
+﻿import './vendor/lodash';
+import './vendor/angular-ui-router';
+
 declare var angular;
 
 angular.module('interestApp', ['ui.router'])

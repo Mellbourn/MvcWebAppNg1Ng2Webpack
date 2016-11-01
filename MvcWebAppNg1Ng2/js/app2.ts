@@ -6,9 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import './vendor/lodash';
 import './vendor/angular';
-import './vendor/angular-ui-router';
 
 import 'core-js';
 import 'zone.js';
