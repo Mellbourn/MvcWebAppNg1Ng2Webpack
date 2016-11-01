@@ -12,11 +12,12 @@ angular.module('interestApp', ['ui.router'])
         var self = this;
         if (self._pins == null) {
             // initialize with sample data
-            return $http.get("/js/data/sample-data.json").then(
-              function (response) {
-                  self._pins = response.data;
-                  return self._pins;
-              })
+            return $http.get("/js/data/sample-data.json")
+                .then(
+                    response => {
+                        this._pins = response.data;
+                        return this._pins;
+                    });
         } else {
             return $q.when(self._pins);
         }
@@ -29,40 +30,38 @@ angular.module('interestApp', ['ui.router'])
         );
     }
 })
-.config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-          templateUrl: '/home.html',
-          controller: 'HomeController as ctrl',
-          url: '/',
-          resolve: {
-              'pins': function (PinsService) {
-                  return PinsService.pins();
-              }
-          }
-      })
-      .state('add', {
-          templateUrl: '/add.html',
-          controller: 'AddController as ctrl',
-          url: '/add',
-          resolve: {
-              'pins': function (PinsService) {
-                  return PinsService.pins();
-              }
-          }
-      })
+.config(($stateProvider, $urlRouterProvider) => {
+        $stateProvider
+            .state('home', {
+                templateUrl: '/home.html',
+                controller: 'HomeController as ctrl',
+                url: '/',
+                resolve: {
+                    'pins': function (PinsService) {
+                        return PinsService.pins();
+                    }
+                }
+            })
+            .state('add', {
+                templateUrl: '/add.html',
+                controller: 'AddController as ctrl',
+                url: '/add',
+                resolve: {
+                    'pins': function (PinsService) {
+                        return PinsService.pins();
+                    }
+                }
+            })
 
-    $urlRouterProvider.when('', '/');
-})
-.filter('truncate', function () {
-    return function (input, amt) {
+        $urlRouterProvider.when('', '/');
+    })
+.filter('truncate', () => function (input, amt) {
         if (input.length > amt) {
             return input.substring(0, amt);
         } else {
             return input;
         }
-    }
-})
+    })
 .controller('HomeController', function (pins) {
     this.pins = pins;
 })
