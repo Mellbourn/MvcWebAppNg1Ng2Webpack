@@ -55,7 +55,7 @@ angular.module('interestApp', ['ui.router'])
 
         $urlRouterProvider.when('', '/');
     })
-.filter('truncate', () => function (input, amt) {
+.filter('truncate', () => (input, amt) => {
         if (input.length > amt) {
             return input.substring(0, amt);
         } else {
@@ -69,25 +69,23 @@ angular.module('interestApp', ['ui.router'])
     var ctrl = this;
     ctrl.saving = false;
 
-    var makeNewPin = function () {
-        return {
-            "title": "Steampunk Cat",
-            "description": "A cat wearing goggles",
-            "user_name": "me",
-            "avatar_src": "images/avatars/me.jpg",
-            "src": "/images/pins/cat.jpg",
-            "url": "http://cats.com",
-            "faved": false,
-            "id": Math.floor(Math.random() * 10000).toString()
-        }
-    }
+    var makeNewPin = () => ({
+        "title": "Steampunk Cat",
+        "description": "A cat wearing goggles",
+        "user_name": "me",
+        "avatar_src": "images/avatars/me.jpg",
+        "src": "/images/pins/cat.jpg",
+        "url": "http://cats.com",
+        "faved": false,
+        "id": Math.floor(Math.random() * 10000).toString()
+    })
 
     ctrl.newPin = makeNewPin();
 
     ctrl.submitPin = function () {
         ctrl.saving = true;
         $timeout(function () {
-            PinsService.addPin(ctrl.newPin).then(function () {
+            PinsService.addPin(ctrl.newPin).then(() => {
                 ctrl.newPin = makeNewPin();
                 ctrl.saving = false;
                 $state.go('home');

@@ -5,7 +5,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     context: Path.join(__dirname, 'js'),
-    entry: './app.js',
+    entry: './app.ts',
     output: {
         path: Path.join(__dirname),
         filename: '[name]-[hash:8].bundle.js'
@@ -26,6 +26,7 @@ module.exports = {
     ],
     module: {
         loaders: [
+            { test: /\.ts$/, loader: "ts" },
             { test: /\.css$/, loader: "style!css" },
             { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.eot$/, loader: "url" },
             { test: /\.html$/, loader: "html" }
