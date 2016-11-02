@@ -6,6 +6,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     debug: true,
+    devtool: "#source-map",
     context: Path.join(__dirname, 'js'),
     entry: './app2.ts',
     resolve: {
