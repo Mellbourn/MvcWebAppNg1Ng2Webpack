@@ -8,6 +8,9 @@ module.exports = {
     debug: true,
     context: Path.join(__dirname, 'js'),
     entry: './app2.ts',
+    resolve: {
+        extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.html']
+    },
     output: {
         path: Path.join(__dirname),
         filename: '[name]-[hash:8].bundle.js'
