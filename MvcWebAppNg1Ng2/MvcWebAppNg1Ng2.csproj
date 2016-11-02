@@ -228,6 +228,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="js\app.ts" />
     <TypeScriptCompile Include="js\app2.ts" />
+    <TypeScriptCompile Include="js\component\simple.component.ts" />
     <TypeScriptCompile Include="js\services\AnalyticsService.ts" />
   </ItemGroup>
   <ItemGroup>

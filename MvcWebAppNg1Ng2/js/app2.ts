@@ -24,6 +24,7 @@ import { UpgradeAdapter } from '@angular/upgrade';
 declare var angular: any;
 import './app'; // "bare import" for side-effects
 import { AnalyticsService } from "./services/AnalyticsService";
+import { SimpleComponent } from "./component/simple.component";
 
 //import { AddPinComponent } from './components/AddPinComponent';
 //import { PinControlsComponent } from './components/PinControlsComponent';
@@ -38,6 +39,10 @@ const upgradeAdapter: UpgradeAdapter = new UpgradeAdapter(
 /*
  * Expose our ng2 content to ng1
  */
+angular.module('interestApp')
+    .directive('simple',
+        upgradeAdapter.downgradeNg2Component(SimpleComponent));
+
 //angular.module('interestApp')
 //    .directive('pinControls',
 //    upgradeAdapter.downgradeNg2Component(PinControlsComponent))
@@ -56,6 +61,7 @@ angular.module('interestApp')
 
 @NgModule({
     declarations: [
+        SimpleComponent
         //PinControlsComponent,
         //AddPinComponent
     ],
