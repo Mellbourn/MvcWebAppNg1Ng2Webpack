@@ -1,7 +1,7 @@
 ﻿/*
  * AddPinComponent: a component that controls the "add pin" page
  */
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { AnalyticsService } from '../services/AnalyticsService';
 
 @Component({
@@ -9,9 +9,13 @@ import { AnalyticsService } from '../services/AnalyticsService';
     template: `<p>Hej!</p>`
     //templateUrl: '/templates/add-ng2.html'
 })
-export class SimpleComponent {
+export class SimpleComponent implements OnInit {
 
     constructor(private analyticsService: AnalyticsService) {
+    }
+
+    ngOnInit(): void {
+        this.analyticsService.recordEvent("inside simple");
     }
 }
 
