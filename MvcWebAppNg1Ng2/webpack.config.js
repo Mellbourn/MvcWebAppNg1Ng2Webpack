@@ -21,7 +21,7 @@ module.exports = {
       new HtmlWebpackPlugin({
           template: Path.join(__dirname, 'js/index.html'),
           inject: 'span',
-          filename: Path.join(__dirname, 'index.html'),
+          //filename: Path.join(__dirname, 'index.html'),
       }),
       new CleanWebpackPlugin(
           [
@@ -34,8 +34,16 @@ module.exports = {
     ],
     module: {
         loaders: [
-            { test: /\.ts$/, loader: "ts" },
-            { test: /\.css$/, loader: "style!css" },
+            {
+                test: /\.ts$/, loaders: [
+                    'awesome-typescript-loader',
+                    'angular2-template-loader'
+                ]
+            },
+            {
+                test: /\.css$/,
+                loaders: ['to-string-loader', 'css-loader']
+            },
             { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.eot$/, loader: "url" },
             { test: /\.html$/, loader: "html" }
         ]
