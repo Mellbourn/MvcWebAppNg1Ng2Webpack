@@ -25,6 +25,8 @@ module.exports = {
       }),
       new CleanWebpackPlugin(
           [
+              "./main*.css",
+              "./main*.css.map",
               "./*.bundle.js",
               "./*.bundle.js.map",
               "./index.html"
