@@ -6,7 +6,8 @@ import { AnalyticsService } from '../services/AnalyticsService';
 
 @Component({
     selector: 'simple',
-    template: `<p>Hej!</p>`
+    template: `<p class="hejbaberiba">Hej!</p>`,
+    styleUrls: ['./simple.component.css']
     //templateUrl: '/templates/add-ng2.html'
 })
 export class SimpleComponent implements OnInit {
