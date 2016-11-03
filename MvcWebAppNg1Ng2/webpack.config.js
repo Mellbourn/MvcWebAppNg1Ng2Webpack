@@ -1,4 +1,5 @@
 /// <binding BeforeBuild='Run - Development' />
+var webpack = require("webpack");
 var WebpackNotifierPlugin = require('webpack-notifier');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -6,7 +7,10 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     debug: true,
     devtool: "#source-map",
-    entry: './js/app2.ts',
+    entry: {
+        'app': './js/app2.ts',
+        'vendor': './js/vendor.ts'
+    },
     resolve: {
         extensions: ['', '.ts', '.js']
     },
@@ -20,6 +24,9 @@ module.exports = {
           template: 'js/index.html',
           inject: 'span',
           filename: '../webpack.html'
+      }),
+      new webpack.optimize.CommonsChunkPlugin({
+          name: ["app", "vendor"]
       }),
       new CleanWebpackPlugin(
           [

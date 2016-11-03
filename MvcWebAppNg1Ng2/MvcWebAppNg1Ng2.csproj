@@ -232,6 +232,7 @@
     <TypeScriptCompile Include="js\app2.ts" />
     <TypeScriptCompile Include="js\component\simple.component.ts" />
     <TypeScriptCompile Include="js\services\AnalyticsService.ts" />
+    <TypeScriptCompile Include="js\vendor.ts" />
     <TypeScriptCompile Include="node_modules\%40types\node\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
