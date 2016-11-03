@@ -3,16 +3,16 @@ var webpack = require("webpack");
 var WebpackNotifierPlugin = require('webpack-notifier');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 
 module.exports = {
-    debug: true,
     devtool: "#source-map",
     entry: {
         main: './js/app2.ts',
         vendors: ['./js/vendor.ts']
     },
     resolve: {
-        extensions: ['', '.ts', '.js']
+        extensions: ['.ts', '.js']
     },
     output: {
         path: 'webpack_build',
@@ -32,10 +32,15 @@ module.exports = {
           [
               "webpack.html",
               "webpack_build"
-          ])
+          ]),
+          // https://github.com/angular/angular/issues/11580
+          new ContextReplacementPlugin(
+              /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+              'js' // location of your src
+              )
     ],
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.ts$/, loaders: [
                     'awesome-typescript-loader',
