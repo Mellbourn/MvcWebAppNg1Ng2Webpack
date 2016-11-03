@@ -9,7 +9,7 @@ module.exports = {
     devtool: "#source-map",
     entry: './js/app2.ts',
     resolve: {
-        extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.html']
+        extensions: ['', '.ts', '.js']
     },
     output: {
         path: Path.join(__dirname),
