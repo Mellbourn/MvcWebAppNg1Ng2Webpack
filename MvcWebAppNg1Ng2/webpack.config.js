@@ -42,6 +42,10 @@ module.exports = {
                 test: /\.css$/,
                 loaders: ['to-string-loader', 'css-loader']
             },
+            {
+                test: /\.scss$/,
+                loaders: ['to-string-loader', 'css-loader', 'sass-loader']
+            },
             { test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.eot$/, loader: "url" },
             { test: /\.html$/, loader: "html" }
         ]
