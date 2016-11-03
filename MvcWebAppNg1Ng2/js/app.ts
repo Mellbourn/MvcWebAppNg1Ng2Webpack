@@ -4,7 +4,7 @@ import './vendor/angular-ui-router';
 declare var angular;
 
 angular.module('interestApp', ['ui.router'])
-.service('PinsService', function ($http, $q) {
+    .service('PinsService', ['$http', '$q', function ($http, $q) {
     this._pins = null;
 
     this.pins = function () {
@@ -28,8 +28,8 @@ angular.module('interestApp', ['ui.router'])
           this._pins.unshift(newPin)
         );
     }
-})
-.config(($stateProvider, $urlRouterProvider) => {
+}])
+    .config(['$stateProvider', '$urlRouterProvider', ($stateProvider, $urlRouterProvider) => {
         $stateProvider
             .state('home', {
                 templateUrl: '/home.html',
@@ -53,7 +53,7 @@ angular.module('interestApp', ['ui.router'])
             })
 
         $urlRouterProvider.when('', '/');
-    })
+    }])
 .filter('truncate', () => (input, amt) => {
         if (input.length > amt) {
             return input.substring(0, amt);
@@ -61,11 +61,11 @@ angular.module('interestApp', ['ui.router'])
             return input;
         }
     })
-    .controller('HomeController', function (pins, AnalyticsService) {
+    .controller('HomeController', ['pins', 'AnalyticsService', function (pins, AnalyticsService) {
         AnalyticsService.recordEvent('HomeControllerVisited');
     this.pins = pins;
-})
-.controller('AddController', function ($state, PinsService, $timeout) {
+}])
+    .controller('AddController', ['$state', 'PinsService', '$timeout', function ($state, PinsService, $timeout) {
     var ctrl = this;
     ctrl.saving = false;
 
@@ -92,7 +92,7 @@ angular.module('interestApp', ['ui.router'])
             });
         }, 2000);
     }
-})
+}])
 .directive('pin', function () {
     return {
         restrict: 'E',

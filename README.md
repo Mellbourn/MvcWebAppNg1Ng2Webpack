@@ -55,3 +55,4 @@ http://bitbucket.hm.com/projects/BPP/repos/pocmvcwebappng1ng2webpack/browse
 * Assets not loading: Make sure correct path and `loader: "url"`
 * You can use require when referring to pngs in text
 * Testing: add `karma-webpack` plugin to karma preprocessors
+* `Unknown provider: t` when running with production flag `-p`, cause minification fails, solution make dependency injection minification safe
