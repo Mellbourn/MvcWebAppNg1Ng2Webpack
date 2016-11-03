@@ -16,8 +16,7 @@ module.exports = {
     },
     output: {
         path: 'webpack_build',
-        filename: '[name]-[chunkhash:6].bundle.js',
-        chunkFilename: 'chunk-[chunkhash:6].js'
+        filename: '[name]-[chunkhash:6].bundle.js'
     },
     plugins: [
       new WebpackNotifierPlugin(),
