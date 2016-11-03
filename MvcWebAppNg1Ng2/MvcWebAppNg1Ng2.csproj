@@ -145,10 +145,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="add.html" />
-    <Content Include="home.html" />
+    <Content Include="js\add.html" />
+    <Content Include="js\home.html" />
     <Content Include="js\index.html" />
-    <Content Include="pin.html" />
+    <Content Include="js\pin.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="package.json" />
