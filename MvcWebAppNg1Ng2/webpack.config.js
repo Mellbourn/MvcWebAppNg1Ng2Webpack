@@ -7,8 +7,7 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     debug: true,
     devtool: "#source-map",
-    context: Path.join(__dirname, 'js'),
-    entry: './app2.ts',
+    entry: './js/app2.ts',
     resolve: {
         extensions: ['', '.ts', '.js', '.json', '.css', '.scss', '.html']
     },
@@ -21,7 +20,6 @@ module.exports = {
       new HtmlWebpackPlugin({
           template: Path.join(__dirname, 'js/index.html'),
           inject: 'span',
-          //filename: Path.join(__dirname, 'index.html'),
       }),
       new CleanWebpackPlugin(
           [
