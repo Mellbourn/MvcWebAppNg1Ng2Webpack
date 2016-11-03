@@ -146,6 +146,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="js\add.html" />
+    <Content Include="js\component\simple.component.html" />
     <Content Include="js\home.html" />
     <Content Include="js\index.html" />
     <Content Include="js\pin.html" />

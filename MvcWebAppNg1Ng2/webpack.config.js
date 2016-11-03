@@ -19,7 +19,7 @@ module.exports = {
       new WebpackNotifierPlugin(),
       new HtmlWebpackPlugin({
           template: Path.join(__dirname, 'js/index.html'),
-          inject: 'span',
+          inject: 'span'
       }),
       new CleanWebpackPlugin(
           [
