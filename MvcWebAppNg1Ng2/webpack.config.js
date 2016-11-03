@@ -1,5 +1,4 @@
 /// <binding BeforeBuild='Run - Development' />
-var Path = require('path');
 var WebpackNotifierPlugin = require('webpack-notifier');
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 var CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -12,22 +11,20 @@ module.exports = {
         extensions: ['', '.ts', '.js']
     },
     output: {
-        path: Path.join(__dirname),
+        path: 'webpack_build',
         filename: '[name]-[hash:8].bundle.js'
     },
     plugins: [
       new WebpackNotifierPlugin(),
       new HtmlWebpackPlugin({
-          template: Path.join(__dirname, 'js/index.html'),
-          inject: 'span'
+          template: 'js/index.html',
+          inject: 'span',
+          filename: '../webpack.html'
       }),
       new CleanWebpackPlugin(
           [
-              "./main*.css",
-              "./main*.css.map",
-              "./*.bundle.js",
-              "./*.bundle.js.map",
-              "./index.html"
+              "webpack.html",
+              "webpack_build"
           ])
     ],
     module: {
