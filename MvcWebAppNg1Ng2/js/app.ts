@@ -73,8 +73,8 @@ angular.module('interestApp', ['ui.router'])
         "title": "Steampunk Cat",
         "description": "A cat wearing goggles",
         "user_name": "me",
-        "avatar_src": "images/avatars/me.jpg",
-        "src": "/images/pins/cat.jpg",
+        "avatar_src": require("./images/avatars/me.jpg"),
+        "src": require("./images/pins/cat.jpg"),
         "url": "http://cats.com",
         "faved": false,
         "id": Math.floor(Math.random() * 10000).toString()
