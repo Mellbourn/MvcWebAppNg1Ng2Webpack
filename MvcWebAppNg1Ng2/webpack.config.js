@@ -8,15 +8,16 @@ module.exports = {
     debug: true,
     devtool: "#source-map",
     entry: {
-        'app': './js/app2.ts',
-        'vendor': './js/vendor.ts'
+        main: './js/app2.ts',
+        vendors: ['./js/vendor.ts']
     },
     resolve: {
         extensions: ['', '.ts', '.js']
     },
     output: {
         path: 'webpack_build',
-        filename: '[name]-[hash:8].bundle.js'
+        filename: '[name]-[chunkhash:6].bundle.js',
+        chunkFilename: 'chunk-[chunkhash:6].js'
     },
     plugins: [
       new WebpackNotifierPlugin(),
@@ -26,7 +27,7 @@ module.exports = {
           filename: '../webpack.html'
       }),
       new webpack.optimize.CommonsChunkPlugin({
-          name: ["app", "vendor"]
+          names: ["vendors", "manifest"]
       }),
       new CleanWebpackPlugin(
           [
