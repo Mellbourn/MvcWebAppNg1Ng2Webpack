@@ -1,10 +1,12 @@
-﻿declare var angular;
+﻿import { AnalyticsService } from './AnalyticsService';
+
+declare var angular;
 
 export class PinsService {
 
     private _pins = null;
 
-    public static $inject = [ '$http', '$q' ];
+    public static $inject = [ '$http', '$q', 'AnalyticsService' ];
 
     public pins = () => {
         var self = this;
@@ -28,7 +30,8 @@ export class PinsService {
         );
     }
 
-    constructor(private $http, private $q) {
+    constructor(private $http, private $q, analyticsServcie: AnalyticsService) {
+        analyticsServcie.recordEvent("called from PinService");
     }
 }
 
