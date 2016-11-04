@@ -1,5 +1,6 @@
 ﻿import './vendor/lodash';
 import './vendor/angular-ui-router';
+import { PinsService } from './services/PinsService';
 
 declare var angular;
 
@@ -11,9 +12,9 @@ angular.module('interestApp', ['ui.router'])
                 controller: 'HomeController as ctrl',
                 url: '/',
                 resolve: {
-                    'pins': function (PinsService) {
-                        return PinsService.pins();
-                    }
+                    'pins': ['PinsService', function (pinsService: PinsService) {
+                        return pinsService.pins();
+                    }]
                 }
             })
             .state('add', {
@@ -21,9 +22,9 @@ angular.module('interestApp', ['ui.router'])
                 controller: 'AddController as ctrl',
                 url: '/add',
                 resolve: {
-                    'pins': function (PinsService) {
-                        return PinsService.pins();
-                    }
+                    'pins': ['PinsService', function (pinsService: PinsService) {
+                        return pinsService.pins();
+                    }]
                 }
             })
 
@@ -40,7 +41,7 @@ angular.module('interestApp', ['ui.router'])
         AnalyticsService.recordEvent('HomeControllerVisited');
     this.pins = pins;
 }])
-    .controller('AddController', ['$state', 'PinsService', '$timeout', function ($state, PinsService, $timeout) {
+    .controller('AddController', ['$state', 'PinsService', '$timeout', function ($state, pinsService: PinsService, $timeout) {
     var ctrl = this;
     ctrl.saving = false;
 
@@ -60,7 +61,7 @@ angular.module('interestApp', ['ui.router'])
     ctrl.submitPin = function () {
         ctrl.saving = true;
         $timeout(function () {
-            PinsService.addPin(ctrl.newPin).then(() => {
+            pinsService.addPin(ctrl.newPin).then(() => {
                 ctrl.newPin = makeNewPin();
                 ctrl.saving = false;
                 $state.go('home');
