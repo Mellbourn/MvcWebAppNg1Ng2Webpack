@@ -3,7 +3,7 @@
  */
 import { Component, Inject, OnInit } from '@angular/core';
 import { AnalyticsService } from '../services/AnalyticsService';
-import { PinsService } from '../services/PinsService';
+import { PinsService } from '../services';
 
 @Component({
     selector: 'simple',
