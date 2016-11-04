@@ -18,6 +18,15 @@ module.exports = {
         path: 'webpack_build',
         filename: '[name]-[chunkhash:6].bundle.js'
     },
+    stats: {
+        errorDetails: true,
+        outputPathinfo: true,
+        colors: true,
+        modules: true,
+        reasons: true,
+        chunk: true,
+        chunkOrigins: true,
+    },
     plugins: [
       new WebpackNotifierPlugin(),
       new HtmlWebpackPlugin({
