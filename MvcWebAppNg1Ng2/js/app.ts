@@ -69,20 +69,7 @@ angular.module('interestApp', ['ui.router'])
         }, 2000);
     }
 }])
-.directive('pin', function () {
-    return {
-        restrict: 'E',
-        templateUrl: '/pin.html',
-        scope: {
-            'pin': "=item"
-        },
-        link: function (scope, elem, attrs) {
-            scope.toggleFav = function () {
-                scope.pin.faved = !scope.pin.faved;
-            }
-        }
-    }
-});
 
 
 import './services/0.angular1ServicesModule';
+import './directives/ng1/pin/pin.directive';
