@@ -1,5 +1,10 @@
-﻿export function pinDirective(
-) // : ng.IDirective
+﻿interface IPinScope extends ng.IScope {
+    pin: any;
+    toggleFav: () => void ;
+}
+
+export function pinDirective(
+) : ng.IDirective
 {
     return {
         restrict: 'E',
@@ -7,10 +12,10 @@
         scope: {
             'pin': "=item"
         },
-        link: function(scope, elem, attrs) {
+        link: ['scope', function(scope: IPinScope, elem, attrs) {
             scope.toggleFav = function() {
                 scope.pin.faved = !scope.pin.faved;
             }
-        }
+        }]
     }
 }
