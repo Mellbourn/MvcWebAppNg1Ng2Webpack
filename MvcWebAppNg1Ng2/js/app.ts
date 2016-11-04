@@ -72,4 +72,4 @@ angular.module('interestApp', ['ui.router'])
 
 
 import './services/0.angular1ServicesModule';
-import './directives/ng1/pin/pin.directive';
+import './directives/ng1/pin';

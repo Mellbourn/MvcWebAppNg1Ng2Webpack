@@ -175,7 +175,7 @@
     <Content Include="js\component\simple.component.html" />
     <Content Include="js\home.html" />
     <Content Include="js\index.html" />
-    <Content Include="js\directives\pin.html" />
+    <Content Include="js\directives\ng1\pin\pin.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="package.json" />
@@ -193,8 +193,8 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="js\images\avatars\me.jpg" />
-    <Content Include="js\images\icons\Heart-Empty.png" />
-    <Content Include="js\images\icons\Heart-Red.png" />
+    <Content Include="js\directives\ng1\pin\icons\Heart-Empty.png" />
+    <Content Include="js\directives\ng1\pin\icons\Heart-Red.png" />
     <Content Include="js\images\pins\cat.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -231,7 +231,8 @@
     <TypeScriptCompile Include="js\app.ts" />
     <TypeScriptCompile Include="js\app2.ts" />
     <TypeScriptCompile Include="js\component\simple.component.ts" />
-    <TypeScriptCompile Include="js\directives\pin.directive.ts" />
+    <TypeScriptCompile Include="js\directives\ng1\pin\index.ts" />
+    <TypeScriptCompile Include="js\directives\ng1\pin\pin.directive.ts" />
     <TypeScriptCompile Include="js\services\0.angular1ServicesModule.ts" />
     <TypeScriptCompile Include="js\services\index.ts" />
     <TypeScriptCompile Include="js\services\PinsService.ts" />
