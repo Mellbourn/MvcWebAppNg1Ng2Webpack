@@ -82,7 +82,7 @@ angular.module('interestApp', ['ui.router'])
             }
         }
     }
-})
+});
 
 
-//  
+import './services/0.angular1ServicesModule';

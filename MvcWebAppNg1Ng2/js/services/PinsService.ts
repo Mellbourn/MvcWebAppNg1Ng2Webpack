@@ -1,7 +1,5 @@
 ﻿import { AnalyticsService } from './AnalyticsService';
 
-declare var angular;
-
 export class PinsService {
 
     private _pins = null;
@@ -34,5 +32,3 @@ export class PinsService {
         analyticsServcie.recordEvent("called from PinService");
     }
 }
-
-angular.module('interestApp').service('PinsService', PinsService);

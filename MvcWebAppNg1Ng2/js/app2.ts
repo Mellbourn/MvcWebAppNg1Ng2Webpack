@@ -23,7 +23,6 @@ import { BrowserModule } from "@angular/platform-browser";
 import { UpgradeAdapter } from '@angular/upgrade';
 declare var angular: any;
 import './app'; // "bare import" for side-effects
-import './services/PinsService';
 import { AnalyticsService } from "./services/AnalyticsService";
 import { SimpleComponent } from "./component/simple.component";
 
@@ -57,7 +56,7 @@ angular.module('interestApp')
 /*
  * Expose our ng1 content to ng2
  */
-//upgradeAdapter.upgradeNg1Provider('PinsService');
+upgradeAdapter.upgradeNg1Provider('PinsService');
 //upgradeAdapter.upgradeNg1Provider('$state');
 
 @NgModule({

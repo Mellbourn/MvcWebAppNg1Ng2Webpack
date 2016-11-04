@@ -3,6 +3,7 @@
  */
 import { Component, Inject, OnInit } from '@angular/core';
 import { AnalyticsService } from '../services/AnalyticsService';
+import { PinsService } from '../services/PinsService';
 
 @Component({
     selector: 'simple',
@@ -11,11 +12,13 @@ import { AnalyticsService } from '../services/AnalyticsService';
 })
 export class SimpleComponent implements OnInit {
 
-    constructor(private analyticsService: AnalyticsService) {
+    constructor(
+        private analyticsService: AnalyticsService,
+        @Inject('PinsService') private pinsService: PinsService) {
     }
 
     ngOnInit(): void {
-        this.analyticsService.recordEvent("inside simple");
+        this.analyticsService.recordEvent("inside simple. Pins: " + this.pinsService.pins());
     }
 }
 
