@@ -1,28 +1,35 @@
 ﻿declare var angular;
 
-angular.module('interestApp')
-    .service('PinsService', ['$http', '$q', function ($http, $q) {
-        this._pins = null;
+export class PinsService {
 
-        this.pins = function () {
-            var self = this;
-            if (self._pins == null) {
-                // initialize with sample data
-                return $http.get("/js/data/sample-data.json")
-                    .then(
-                    response => {
-                        this._pins = response.data;
-                        return this._pins;
-                    });
-            } else {
-                return $q.when(self._pins);
-            }
-        }
+    private _pins = null;
 
-        this.addPin = function (newPin) {
-            // adding would normally be an API request so lets mock async
-            return $q.when(
-                this._pins.unshift(newPin)
-            );
+    public static $inject = [ '$http', '$q' ];
+
+    public pins = () => {
+        var self = this;
+        if (self._pins == null) {
+            // initialize with sample data
+            return this.$http.get("/js/data/sample-data.json")
+                .then(
+                response => {
+                    this._pins = response.data;
+                    return this._pins;
+                });
+        } else {
+            return this.$q.when(self._pins);
         }
-    }])
+    }
+
+    public addPin = (newPin) => {
+        // adding would normally be an API request so lets mock async
+        return this.$q.when(
+            this._pins.unshift(newPin)
+        );
+    }
+
+    constructor(private $http, private $q) {
+    }
+}
+
+angular.module('interestApp').service('PinsService', PinsService);
